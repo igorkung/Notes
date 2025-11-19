@@ -6,6 +6,8 @@
 --[ PHP - Код](PHP/MAIN.md)  
 
 
+-- Readme - разметка и написание.
+https://github.com/GnuriaN/format-README
 
 ```
 curl
