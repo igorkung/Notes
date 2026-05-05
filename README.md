@@ -4,7 +4,7 @@
 ## Содержание:
 --[ GIT - команды/подготовка ](all/GIT.md)  
 --[ PHP - Код](PHP/MAIN.md)  
-
+--[ Python - Код/примеры](Python/MAIN.md)
 
 -- Readme - разметка и написание.
 https://github.com/GnuriaN/format-README
