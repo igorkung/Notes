@@ -1,4 +1,4 @@
 # PHP +
 Содержание:
 
-[-Mysql-](/php-mysql.md)
+[-Mysql-](/PHP/php-mysql.md)
