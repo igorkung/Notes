@@ -1,3 +1,13 @@
+# Python код и примеры
+#### Описание: 
+[Main](../README.md)
+
+## Содержание:
+--[ URL запрос с парсингом json ](/url_json.md)
+
+-- Readme - разметка и написание.
+https://github.com/GnuriaN/format-README
+
 1111
 пока пишу все сюда в дальнейшем думаю разобью 
 
