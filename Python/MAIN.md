@@ -1,9 +1,9 @@
 # Python код и примеры
 #### Описание: 
-[Main](../README.md)
+[Главная](../README.md)
 
 ## Содержание:
---[ URL запрос с парсингом json ](/url_json.md)
+--[ URL запрос с парсингом json ](./url_json.md)
 
 -- Readme - разметка и написание.
 https://github.com/GnuriaN/format-README
