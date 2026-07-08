@@ -3,6 +3,12 @@
 
 Python
 ```
+##==== переменные собюирающие данные о фаиле скрипта и каталоге запуска
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+log_file = os.path.join(script_dir, __file__ + '.log')
+
+
 # Получаем путь к текущему скрипту
 log_file = os.path.join(script_dir, '{имя фаила с логами}.log')
 ##===== Логгер + ротация ===== 
@@ -22,27 +28,35 @@ handler.setFormatter(formatter)
 logger.addHandler(handler) ## включаем хэндлер
 ##==================
 
-## функция для запросов общая
+## функция для URL запросов общая
 def  url_get_json(url,jsonvar):
-
     headers = {
         "Content-Type": "application/json",
     }
     # запрос
-    response = requests.get(url=url, headers=headers)
-    #print(response.status_code)
+    logger.info('Старт попытки запроса')
+    try: 
+        response = requests.get(url=url, headers=headers)
+        print(response.status_code)
+    except ValueError as e:
+        logger.info(f"Request ERROR: {e}")
+    logger.info(response.status_code)
+
 
     if response.status_code == 200:
+#        logger.info('Код 200 ')
         try:
-            jsondata = response.json()  # Parse the JSON response
-            jsonvariable = jsondata.get(jsonvar)  # Safely access jsonvar
+            jsondata = response.json() # Parse the JSON response
+            if jsonvar == 'all':
+                logger.info(f"jsondata = {jsondata}")
+                return jsondata
+            else: 
+                jsonvariable = jsondata.get(jsonvar)  # Safely access jsonvar
+                logger.info(f"jsonvariable = {jsonvariable}")
+                return jsonvariable
 
-            # Принт всего для тестов
-            #print(jsondata)
-
-            return jsonvariable
-        except ValueError:
-            logger.warning("Response is not valid JSON")
+        except ValueError as e:
+            logger.info(f"Response is not valid JSON: {e}")
             #print("Response is not valid JSON")
             return "None"
     else:
